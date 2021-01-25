@@ -1,0 +1,39 @@
+﻿<Window x:Class="AutoserviceEduSam.AddProducts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoserviceEduSam"
+        mc:Ignorable="d"
+        Title="Добавить продукт" Height="515" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel>
+            <StackPanel Margin="0 10 0 0">
+                <Label Content="Название" FontSize="16"/>
+                <TextBox Height="23" Margin="5 0 0 0" x:Name="ProductName" x:FieldModifier="public" />
+            </StackPanel>
+            <StackPanel Margin="0 10 0 0">
+                <Label Content="Цена" FontSize="16"/>
+                <TextBox Height="23" Margin="5 0 0 0" x:Name="ProductCost"/>
+            </StackPanel>
+            <StackPanel Margin="0 10 0 0">
+                <Label Content="Описание" FontSize="16"/>
+                <TextBox Height="23" Margin="5 0 0 0" x:Name="ProductDescription"/>
+            </StackPanel>
+            <StackPanel Margin="0 10 0 0">
+                <Label Content="Путь к фото" FontSize="16"/>
+                <TextBox Height="23" Margin="5 0 0 0" x:Name="ProductPhotoPath" MouseDoubleClick="ProductPhotoPath_MouseDoubleClick" />
+            </StackPanel>
+            <StackPanel Margin="0 10 0 0">
+                <Label Content="Наличие" FontSize="16"/>
+                <TextBox Height="23" Margin="5 0 0 0" x:Name="ProductIsActive" />
+            </StackPanel>
+            <StackPanel Margin="0 10 0 0">
+                <Label Content="ID Мануфактуры" FontSize="16"/>
+                <TextBox Height="23" Margin="5 0 0 0" x:Name="ManufacturerID" />
+            </StackPanel>
+            <Button x:Name="AddProductBtn" Content="Добавить" Height="25" Margin="0 15 0 0" Click="AddProductBtn_Click"/>
+            <Button x:Name="CloseAddClientsWindow" Content="Закрыть" Height="25" Margin="0 15 0 0" />
+        </StackPanel>
+    </Grid>
+</Window>

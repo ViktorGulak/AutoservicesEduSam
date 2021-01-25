@@ -1,0 +1,72 @@
+﻿<Window x:Class="AutoserviceEduSam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoserviceEduSam"
+        mc:Ignorable="d"
+        Title="Доеду сам" Height="600" Width="1000" 
+        Icon="C:\Users\gulak.vv0142\Desktop\КОД.1.9_КлинтыАвтосервиса\Общие ресурсы\service_logo.png"
+        ResizeMode="NoResize">
+    <Grid>
+        <ToolBar Height="35" VerticalAlignment="Top">
+            <Label Content="Списки" FontSize="14"/>
+            <ComboBox Height="30" Width="100" FontSize="14" Name="Lists" SelectedIndex="3" SelectionChanged="Lists_SelectionChanged">
+                <ComboBoxItem Content="Клиенты" FontSize="14"/>
+                <ComboBoxItem Content="Услуги"  FontSize="14"/>
+                <ComboBoxItem Content="Продукты"  FontSize="14"/>
+                <ComboBoxItem Content="" Visibility="Hidden" FontSize="0.01"/>
+            </ComboBox>
+            <Separator />
+            <Label Content="Операции" FontSize="14"/>
+            <ComboBox Height="30" Width="100" FontSize="14" Name="Operations" SelectionChanged="Operations_SelectionChanged">
+                <ComboBoxItem Content="Добавить" FontSize="14"/>
+                <ComboBoxItem Content="Изменить"  FontSize="14"/>
+                <ComboBoxItem Content="Удалить"  FontSize="14"/>
+                <ComboBoxItem Content="" Visibility="Hidden" FontSize="0.01"/>
+            </ComboBox>
+            <Separator />
+            <Label Content="Поиск" FontSize="14"/>
+            <TextBox x:Name="FindValueField"  Height="30"  FontSize="14" Width="150" TextChanged="FindValueField_TextChanged" />
+            <Separator />
+            <Label Content="Фильтр" FontSize="14"/>
+            <ComboBox Height="30" Width="100" FontSize="14">
+                <ComboBoxItem Content="Всё" IsSelected="True" FontSize="14"/>
+                <ComboBoxItem Content=""  FontSize="14"/>
+                <ComboBoxItem Content="Удалить"  FontSize="14"/>
+            </ComboBox>
+            <Separator />
+            <Label Content="Кол-во записей" FontSize="14"/>
+            <ComboBox Height="30" Width="100" FontSize="14" Name="NumberOfRecords" SelectedIndex="0"  SelectionChanged="NumberOfRecords_SelectionChanged" >
+                <ComboBoxItem Content="Все" FontSize="14"/>
+                <ComboBoxItem Content="1"  FontSize="14"/>
+                <ComboBoxItem Content="3"  FontSize="14"/>
+                <ComboBoxItem Content="5"  FontSize="14"/>
+                <ComboBoxItem Content="10"  FontSize="14"/>
+            </ComboBox>
+            <Separator />
+        </ToolBar>
+        <DockPanel Width="auto" Height="auto">
+            <StackPanel DockPanel.Dock="Left" Width="600" Height="auto">
+                <Label Name="GridTitle" Content="Клиенты" FontSize="24" FontWeight="ExtraBold" Margin="0 35 0 0"/>
+                <DataGrid x:Name="grid" Margin="0 5 0 0" Height="450" Width="Auto" VerticalAlignment="Center" SelectionChanged="grid_SelectionChanged" >
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Добавить" Name="ContextMenuAdd" Click="ContextMenuAdd_Click" />
+                            <Separator/>
+                            <MenuItem Header="Редактировать" Name="ContextMenuChange" Click="ContextMenuChange_Click" />
+                            <Separator/>
+                            <MenuItem Header="Удалить" Name="ContextMenuremove" Click="ContextMenuremove_Click"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                </DataGrid>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right" Height="auto" Width="auto">
+                <Label  Content="Фото" FontSize="24" FontWeight="ExtraBold" Margin="0 40 0 0"/>
+                <Image Name="Photo" Source="C:\Users\gulak.vv0142\Desktop\КОД.1.9_КлинтыАвтосервиса\Общие ресурсы\service_logo.png" Height="480" Width="auto"  Margin="0 5 0 0"/>
+            </StackPanel>
+        </DockPanel>
+        
+
+    </Grid>
+</Window>
